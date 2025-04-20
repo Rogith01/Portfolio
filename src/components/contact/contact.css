@@ -1,0 +1,100 @@
+/* FORM */
+.hidden {
+  display: none;
+}
+
+#Contact__sent-message {
+  text-align: center;
+}
+
+.contact__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Container for each input field */
+.input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+/* Style the label to act as a floating placeholder */
+.input-container label {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: var(--color-primary-variant);
+  font-size: 1rem;
+  transition: 0.3s ease all;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Style the input */
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  padding: 1.5rem;
+  padding-top: 2.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 2px solid var(--color-primary-variant);
+  resize: none;
+  color: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+
+/* When input is focused, or has content, float the label above the border */
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label,
+.input-container textarea:focus + label,
+.input-container textarea:not(:placeholder-shown) + label {
+  top: 0.5rem;
+  left: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  padding: 0 0.3rem;
+  z-index: 3;
+}
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px) {
+  .container.contact__container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+  .container.contact__container {
+    width: 90%;
+  }
+
+  .input-container label {
+    font-size: 0.9rem;
+  }
+
+  .input-container input:focus + label,
+  .input-container input:not(:placeholder-shown) + label,
+  .input-container textarea:focus + label,
+  .input-container textarea:not(:placeholder-shown) + label {
+    top:0.5rem;
+    left: 1.2rem;
+    font-size: 0.8rem;
+  }
+}
