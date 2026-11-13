@@ -1,71 +1,92 @@
+
 import React from "react";
 import "./portfolio.css";
-import IMG3 from "../../assets/IMG3.png"
-import IMG2 from "../../assets/IMG2.png"
-import IMG1 from "../../assets/IMG1.png"
-import IMG4 from "../../assets/IMG4.png"
+
+import IMG1 from "../../assets/seiyalam.jpg";
+import IMG2 from "../../assets/billqora.jpg";
+import IMG3 from "../../assets/vigilant.jpg";
 
 const data = [
   {
     id: 1,
     image: IMG1,
-    title: "Vigilant View",
-    tools:"AIML | YOLO | OPEN CV | SQL",
-    github: "https://github.com/Rogith01/Vigilant-View.git",
-    demo: "https://github.com/Rogith01/Vigilant-View.git",
+    title: "SEIYALAM",
+    subtitle: "Service Management Platform",
+    tools: "REACT | REACT NATIVE | PYTHON | DJANGO REST | MYSQL",
+    github: "https://github.com/Rogith01/SEIYALAM.git",
+    demo: "https://seiyalam.netlify.app/",
   },
   {
     id: 2,
     image: IMG2,
-    title: "Click Shop Online - E-commerce",
-    tools:"HTML | CSS | JAVASCRIPT",
-    github: "https://github.com/Rogith01/Ecommerce_Website-ETS-Internship.git",
-    demo: "https://click-shop-online.netlify.app",
+    title: "BILLQORA",
+    subtitle: "Multi-Store POS & Billing System",
+    tools: "REACT | JAVASCRIPT | NODE.JS | MYSQL | ELECTRON",
+    github: "https://github.com/Rogith01/invoice",
+    demo: "https://billqora.netlify.app/",
   },
   {
     id: 3,
     image: IMG3,
-    title: "Invoice-Bill-Generator",
-    tools:"REACT.JS",
-    github: "https://github.com/Rogith01/invoice-generator.git",
-    demo: "https://invoice-rogith.netlify.app/",
+    title: "Vigilant View",
+    subtitle: "Crime Activity Detection System",
+    tools: "PYTHON | AI/ML | YOLO | OPENCV | SQL",
+    github: "https://github.com/Rogith01/Vigilant-View.git",
+    demo: null,
   },
-  {
-    id: 4,
-    image: IMG4,
-    title: "AI-Chatbot",
-    tools:"Python",
-    github: "https://github.com/Rogith01/chatbot.git",
-    demo: "https://github.com/Rogith01/chatbot.git",
-  },
-
 ];
 
 const Portfolio = () => {
   return (
     <section id="portfolio">
-      <h5>My most recent work can be found on <a href="https://github.com/Rogith01">Github</a></h5>
+      <h5>
+        Explore my projects on{" "}
+        <a
+          href="https://github.com/Rogith01"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+      </h5>
+
       <h2>Portfolio</h2>
+
       <div className="container portfolio__container">
-        {data.map(({ id, image, title,tools, github, demo}) => {
-          return (
-            <article key={id} className="portfolio__item">
-              <div className="portfolio__item-image">
-                <img src={image} alt={title} />
-              </div>
-              <h3>{title} <br /> {tools}</h3>
-              
-              <div className="portfolio__item-cta">
-                <a href={github} className="btn" >
-                Github
-                </a>
-                <a href={demo} className="btn">
+        {data.map(({ id, image, title, subtitle, tools, github, demo }) => (
+          <article key={id} className="portfolio__item">
+            <div className="portfolio__item-image">
+              <img src={image} alt={title} />
+            </div>
+
+            <h3>{title}</h3>
+            <h4 className="portfolio__subtitle">{subtitle}</h4>
+
+            <p className="portfolio__tools">{tools}</p>
+
+            <div className="portfolio__item-cta">
+              <a
+                href={github}
+                className="btn"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+
+              {demo && (
+                <a
+                  href={demo}
+                  className="btn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Live Demo
                 </a>
-              </div>
-            </article>
-          );
-        })}
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import CV from "../../assets/Rogith-Resume.pdf";
+import CV from "../../assets/ROGITH-CV.pdf";
 import { FaDownload } from "react-icons/fa";
 
 const CTA = () => {
