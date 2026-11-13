@@ -14,7 +14,7 @@ const Footer = () => {
       <ul className="permalinks">
         <li>
           {/* eslint-disable-next-line */}
-          <a href="#">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
           <a href="#about">About</a>
